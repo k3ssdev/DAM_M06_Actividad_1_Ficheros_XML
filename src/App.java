@@ -1,9 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        //hello world
-        
-        
-
+               
+        System.out.println("Hello, World!");
 
     }
 }
