@@ -5,7 +5,7 @@
 // Generado el: 2023.02.05 a las 12:07:36 PM CET 
 //
 
-package generated;
+package Ejemplos.Clase_01.Acceso_DOM.generated;
 
 import java.util.ArrayList;
 import java.util.List;

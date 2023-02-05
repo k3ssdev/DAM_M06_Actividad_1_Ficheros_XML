@@ -1,0 +1,3 @@
+Hola a todos!
+Este es el contenido del archivo ejemplo04.txt
+Adios!

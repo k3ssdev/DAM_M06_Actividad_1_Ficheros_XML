@@ -1,4 +1,4 @@
-package Ejemplos.Clase_01;
+package Ejemplos.Clase_01.Acceso_DOM;
 //Importamos las librerías necesarias
 import java.io.File;
 import java.io.IOException;

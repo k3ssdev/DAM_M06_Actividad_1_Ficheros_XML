@@ -1,4 +1,4 @@
-package Ejemplos.Clase_01;
+package Ejemplos.Clase_01.Acceso_DOM;
 import java.io.File;
 
 public class Principal {

@@ -1,0 +1,19 @@
+1 <?xml version="1.0" encoding="UTF-8"?>
+2 <Libros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="LibrosEsquema.xsd">
+3     <Libro publicado_en="1840">
+4         <Titulo>El Capote</Titulo>
+5         <Autor>Nikolai Gogol</Autor>
+6     </Libro>
+7     <Libro publicado_en="2008">
+8         <Titulo>El Sanador de Caballos</Titulo>
+9         <Autor>Gonzalo Giner</Autor>
+10     </Libro>
+11     <Libro publicado_en="1981">
+12         <Titulo>El Nombre de la Rosa</Titulo>
+13         <Autor>Umberto Eco</Autor>
+14     </Libro>
+15     <Libro publicado_en="1234">
+16         <Titulo>pruebas1</Titulo>
+17         <Autor>pruebas2</Autor>
+18     </Libro>
+19 </Libros>
