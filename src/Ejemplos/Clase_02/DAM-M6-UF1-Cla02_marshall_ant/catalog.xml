@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/G:/La%20meva%20unitat/DAM-M06/Clase02/pruebas.xsd" uri="xml-resources/jaxb/pruebas/pruebas.xsd"/>
+</catalog>
