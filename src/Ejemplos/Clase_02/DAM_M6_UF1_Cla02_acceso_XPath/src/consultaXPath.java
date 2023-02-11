@@ -1,4 +1,4 @@
-package Ejemplos.Clase_02.XPath.src;
+package Ejemplos.Clase_02.Cla02_acceso_XPath.src;
 
 import java.io.FileInputStream;
 

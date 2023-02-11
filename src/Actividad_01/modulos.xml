@@ -48,4 +48,28 @@
             <UF3>9.0</UF3>
         </alumno>
     </modulo>
+    <modulo m="M01">
+        <alumno>
+            <nombre>Alberto PÃ©rez</nombre>
+            <UF1>10.0</UF1>
+            <UF2>10.0</UF2>
+            <UF3>10.0</UF3>
+        </alumno>
+    </modulo>
+    <modulo m="M02">
+        <alumno>
+            <nombre>Alberto PÃ©rez</nombre>
+            <UF1>10.0</UF1>
+            <UF2>10.0</UF2>
+            <UF3>10.0</UF3>
+        </alumno>
+    </modulo>
+    <modulo m="M03">
+        <alumno>
+            <nombre>Alberto PÃ©rez</nombre>
+            <UF1>10.0</UF1>
+            <UF2>10.0</UF2>
+            <UF3>10.0</UF3>
+        </alumno>
+    </modulo>
 </modulos>

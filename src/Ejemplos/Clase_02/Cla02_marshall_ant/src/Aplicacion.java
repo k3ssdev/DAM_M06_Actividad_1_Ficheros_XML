@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package Ejemplos.Clase_02.Cla02_marshall_ant.src;
 
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
-import pruebas.Modulos;
-import pruebas.Modulos.Modulo;
-import pruebas.Modulos.Modulo.Alumno;
+import Ejemplos.generated.Modulos;
+import Ejemplos.generated.Modulos.Modulo;
+import Ejemplos.generated.Modulos.Modulo.Alumno;
 
 public class Aplicacion {
 
@@ -21,6 +18,7 @@ public class Aplicacion {
             float uf3 = (float)3.0;
             
             Alumno alumno = new Alumno();
+            alumno.setNombre("Juan");
             alumno.setUF1(uf1);
             alumno.setUF2(uf2);
             alumno.setUF3(uf3);
@@ -31,6 +29,7 @@ public class Aplicacion {
             alumno2.setUF3(uf3+3);
             
             Modulo modulo = new Modulo();
+            alumno.setNombre("Pedro");
             modulo.getAlumno().add(alumno);
             modulo.getAlumno().add(alumno2);
             modulo.setM("M01");

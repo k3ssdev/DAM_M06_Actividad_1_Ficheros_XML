@@ -1,66 +1,159 @@
 package Actividad_01;
 
-import Actividad_01.generated.Modulos.Modulo.Alumno;
-import Actividad_01.generated.Modulos.Modulo;
+/*RESUMEN DEL CÓDIGO:
+ * He creado la clase Traspaso, que es la clase principal y contiene dos atributos: un ArrayList de objetos Modulo y un ArrayList de objetos Alumno.
+ * Dentro de Traspaso he creado el método main, que llama a un método para leer el contenido del fichero 
+ * y otro método para serializar (marshalling) los objetos y guardarlos en un fichero xml.
+
+ *El método que lee los datos utiliza un BufferReader para leer el archivo de texto  línea por línea. 
+ *Si empieza con "@"es una línea que contiene información sobre el módulo (fecha y nombre del módulo).
+ *Si la línea no empieza con "UF", se trata de una línea que contiene el nombre del alumno. 
+ *Si la línea empieza con "UF", se trata de una línea que contiene información sobre la nota del alumno. 
+ *He usado una estructura while para que lea las líneas hasta que sea null, y para distinguir las líneas en función de como empiecen, 
+ *he usado if-else if-else. En el útimo else, he utilizado switch-case para UF1, UF2 y UF3.
+
+ *El método que serializa los datos para guardarlos en un xml, crea un objeto de la clase Modulos, que representa al archivo XML. 
+ *Luego, recorro los objetos Modulo y Alumno almacenados en los ArrayList modulos y alumnos para agregar cada alumno a su correspondiente módulo. 
+ *Finalmente, se utiliza un objeto Marshaller para convertir el objeto Java a un archivo XML y escribirlo en el fichero modulos.xml
+ */
+
+
+// Importamos las clases necesarias para trabajar con archivos, creación de XML y manipulación de datos
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+
+// Importamos las clases generadas a partir del esquema XML
+import Actividad_01.generated.Modulos;
+import Actividad_01.generated.Modulos.Modulo;
+import Actividad_01.generated.Modulos.Modulo.Alumno;
+
+// Clase Traspaso para realizar la lectura de un archivo y la creación de un archivo XML
 public class Traspaso {
 
-  public static void main(String[] args) {
-    Traspaso traspaso = new Traspaso();
-    traspaso.leerDatos();
-  }
-
+  // Atributos que almacenarán los objetos Modulo y Alumno
   private ArrayList<Modulo> modulos = new ArrayList<Modulo>();
   private ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
 
-  public void leerDatos() {
+  // Método main que llama a los métodos leerFichero y crearXML
+  public static void main(String[] args) {
+    Traspaso t = new Traspaso();
+    t.leerFichero();
+    t.crearXML();
+    System.out.println("Fichero XML creado correctamente.");
+  }
+
+  /**
+   * Método que lee el fichero "src/Actividad_01/notas.txt" y almacena los datos
+   * en
+   * los ArrayList modulos y alumnos.
+   */
+  public void leerFichero() {
     try {
+      // Crea un BufferReader para leer el fichero "src/Actividad_01/notas.txt"
       BufferedReader br = new BufferedReader(new FileReader("src/Actividad_01/notas.txt"));
-      String line;
 
-      while ((line = br.readLine()) != null) {
-        if (line.startsWith("@")) {
-          String[] datos = line.split(" ");
+      // Lee la primera línea del fichero
+      String linea = br.readLine();
 
-          // Crear el módulo
-          Modulo modulo = new Modulo();
-          // quitar el @ a la fecha
-          datos[0] = datos[0].substring(1);
-          System.out.println("Fecha: " + datos[0]);
-          System.out.println("Modulo: " + datos[1]);
+      // Inicializa las variables m y a a null
+      Modulo m = null;
+      Alumno a = null;
 
-          // Añadir el módulo a la lista
-          modulos.add(modulo);
-        } else if (line.startsWith("UF")) {
-          String[] datos = line.split("=");
+      // Mientras haya líneas en el fichero
+      while (linea != null) {
+        // Si la línea empieza con "@"
+        if (linea.startsWith("@")) {
+          // Separa la línea en fecha y módulo
+          String[] fechaModulo = linea.substring(1).split(" ");
 
-          // Crear la UF
-          Modulo uf1Modulo = new Modulo();
-          System.out.println("UF: " + datos[0]);
-          System.out.println("Nota: " + datos[1]);
+          // Crea un nuevo objeto Modulo y establece su m
+          m = new Modulo();
+          m.setM(fechaModulo[1]);
 
-          // Añadir la UF al módulo
-          modulos.add(uf1Modulo);
-        } else {
-          String[] datos = line.split("");
-
-          // Crear el alumno
-          Alumno alumno = new Alumno();
-          System.out.println("Nombre: " + datos[0]);
-          // Añadir el alumno a la lista
-          alumnos.add(alumno);
+          // Añade el objeto Modulo al ArrayList modulos
+          this.modulos.add(m);
         }
+        // Si la línea no empieza con "UF"
+        else if (!linea.startsWith("UF")) {
+          // Crea un nuevo objeto Alumno y establece su nombre
+          a = new Alumno();
+          a.setNombre(linea);
 
+          // Si m no es null, añade el objeto Alumno a la lista de alumnos del objeto
+          // Modulo
+          if (m != null) {
+            m.getAlumno().add(a);
+          }
+        }
+        // Si la línea empieza con "UF"
+        else {
+          // Separa la línea en nota y valor
+          String[] nota = linea.split("=");
+
+          // Si a no es null
+          if (a != null) {
+            // Según la nota, establece el valor correspondiente en el objeto Alumno
+            switch (nota[0]) {
+              case "UF1":
+                a.setUF1(Float.parseFloat(nota[1]));
+                break;
+              case "UF2":
+                a.setUF2(Float.parseFloat(nota[1]));
+                break;
+              case "UF3":
+                a.setUF3(Float.parseFloat(nota[1]));
+                break;
+            }
+          }
+        }
+        // Lee la siguiente línea
+        linea = br.readLine();
       }
+      // Cierra el BufferReader
       br.close();
     } catch (IOException e) {
+      // Si ocurre un error al leer el fichero, muestra un mensaje de error
+      System.out.println("Error al leer el fichero");
       e.printStackTrace();
-
     }
-
   }
+
+  public void crearXML() {
+    try {
+      // Crea un objeto de la clase Modulos
+      Modulos modulos = new Modulos();
+      // Recorre la lista de módulos
+      for (Modulo m : this.modulos) {
+        // Recorre la lista de alumnos
+        for (Alumno a : this.alumnos) {
+          // Si el nombre del alumno es igual al módulo
+          if (a.getNombre().equals(m.getM())) {
+            // Agrega el alumno al módulo
+            m.getAlumno().add(a);
+          }
+        }
+        // Agrega el módulo a la lista de módulos
+        modulos.getModulo().add(m);
+      }
+      // Crea un contexto JAXB para la clase Modulos
+      JAXBContext contexto = JAXBContext.newInstance(Modulos.class);
+      // Crea un objeto Marshaller para convertir el objeto Java a XML
+      Marshaller marshaller = contexto.createMarshaller();
+      // Establece que se formateará el XML con sangría y saltos de línea
+      marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+      // Escribe el objeto Java a un archivo XML
+      marshaller.marshal(modulos, new File("src/Actividad_01/modulos.xml"));
+    } catch (JAXBException e) {
+      System.out.println("Error al crear el XML");
+      e.printStackTrace();
+    }
+  }
+
 }

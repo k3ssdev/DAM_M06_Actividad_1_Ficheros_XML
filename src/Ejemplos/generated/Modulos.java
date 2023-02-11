@@ -2,12 +2,11 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantaci�n de la referencia de enlace (JAXB) XML v2.2.8-b130911.1802 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perder�n si se vuelve a compilar el esquema de origen. 
-// Generado el: 2023.02.11 a las 12:18:41 PM CET 
+// Generado el: 2023.02.11 a las 04:08:54 PM CET 
 //
 
 
-package Actividad_01.generated;
-
+package Ejemplos.generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -31,20 +28,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="modulo" maxOccurs="unbounded">
+ *         &lt;element name="modulo" maxOccurs="unbounded" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="alumno" maxOccurs="unbounded">
+ *                   &lt;element name="alumno" maxOccurs="unbounded" minOccurs="0">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                           &lt;sequence>
  *                             &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *                             &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *                             &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}float"/>
+ *                             &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}float"/>
  *                           &lt;/sequence>
  *                         &lt;/restriction>
  *                       &lt;/complexContent>
@@ -52,7 +49,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                   &lt;/element>
  *                 &lt;/sequence>
  *                 &lt;attribute name="m" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 &lt;attribute name="fecha" type="{http://www.w3.org/2001/XMLSchema}date" />
  *               &lt;/restriction>
  *             &lt;/complexContent>
  *           &lt;/complexType>
@@ -67,14 +63,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "modulo","linea"
+    "modulo"
 })
 @XmlRootElement(name = "modulos")
 public class Modulos {
 
-    @XmlElement(required = true)
     protected List<Modulos.Modulo> modulo;
-    protected String linea;
 
     /**
      * Gets the value of the modulo property.
@@ -105,14 +99,6 @@ public class Modulos {
         return this.modulo;
     }
 
-    public String getLinea() {
-        return linea;
-      }
-    
-      public void setLinea(String value) {
-        this.linea = value;
-      }
-    
 
     /**
      * <p>Clase Java para anonymous complex type.
@@ -124,15 +110,15 @@ public class Modulos {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="alumno" maxOccurs="unbounded">
+     *         &lt;element name="alumno" maxOccurs="unbounded" minOccurs="0">
      *           &lt;complexType>
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                 &lt;sequence>
      *                   &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-     *                   &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+     *                   &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}float"/>
+     *                   &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}float"/>
+     *                   &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}float"/>
      *                 &lt;/sequence>
      *               &lt;/restriction>
      *             &lt;/complexContent>
@@ -140,7 +126,6 @@ public class Modulos {
      *         &lt;/element>
      *       &lt;/sequence>
      *       &lt;attribute name="m" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *       &lt;attribute name="fecha" type="{http://www.w3.org/2001/XMLSchema}date" />
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
@@ -154,14 +139,9 @@ public class Modulos {
     })
     public static class Modulo {
 
-        @XmlElement(required = true)
         protected List<Modulos.Modulo.Alumno> alumno;
         @XmlAttribute(name = "m")
         protected String m;
-        @XmlAttribute(name = "fecha")
-        @XmlSchemaType(name = "date")
-        protected XMLGregorianCalendar fecha;
-        //public String linea;
 
         /**
          * Gets the value of the alumno property.
@@ -216,30 +196,6 @@ public class Modulos {
             this.m = value;
         }
 
-        /**
-         * Obtiene el valor de la propiedad fecha.
-         * 
-         * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public XMLGregorianCalendar getFecha() {
-            return fecha;
-        }
-
-        /**
-         * Define el valor de la propiedad fecha.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
-         */
-        public void setFecha(XMLGregorianCalendar value) {
-            this.fecha = value;
-        }
-
 
         /**
          * <p>Clase Java para anonymous complex type.
@@ -252,9 +208,9 @@ public class Modulos {
          *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *       &lt;sequence>
          *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
-         *         &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
-         *         &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+         *         &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}float"/>
+         *         &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}float"/>
+         *         &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}float"/>
          *       &lt;/sequence>
          *     &lt;/restriction>
          *   &lt;/complexContent>
@@ -274,11 +230,11 @@ public class Modulos {
 
             @XmlElement(required = true)
             protected String nombre;
-            @XmlElement(name = "UF1", required = true)
+            @XmlElement(name = "UF1")
             protected float uf1;
-            @XmlElement(name = "UF2", required = true)
+            @XmlElement(name = "UF2")
             protected float uf2;
-            @XmlElement(name = "UF3", required = true)
+            @XmlElement(name = "UF3")
             protected float uf3;
 
             /**
@@ -308,79 +264,51 @@ public class Modulos {
             /**
              * Obtiene el valor de la propiedad uf1.
              * 
-             * @return
-             *     possible object is
-             *     {@link float }
-             *     
              */
-            public Float getUF1() {
+            public float getUF1() {
                 return uf1;
             }
 
             /**
              * Define el valor de la propiedad uf1.
              * 
-             * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
              */
-            public void setUF1(float f) {
-                this.uf1 = f;
+            public void setUF1(float value) {
+                this.uf1 = value;
             }
 
             /**
              * Obtiene el valor de la propiedad uf2.
              * 
-             * @return
-             *     possible object is
-             *     {@link Float }
-             *     
              */
-            public Float getUF2() {
+            public float getUF2() {
                 return uf2;
             }
 
             /**
              * Define el valor de la propiedad uf2.
              * 
-             * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
              */
-            public void setUF2(float f) {
-                this.uf2 = f;
+            public void setUF2(float value) {
+                this.uf2 = value;
             }
 
             /**
              * Obtiene el valor de la propiedad uf3.
              * 
-             * @return
-             *     possible object is
-             *     {@link Float }
-             *     
              */
-            public Float getUF3() {
+            public float getUF3() {
                 return uf3;
             }
 
             /**
              * Define el valor de la propiedad uf3.
              * 
-             * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
              */
-            public void setUF3(float f) {
-                this.uf3 = f;
+            public void setUF3(float value) {
+                this.uf3 = value;
             }
 
-        }
-
-
-        public void setFecha(String string) {
         }
 
     }
