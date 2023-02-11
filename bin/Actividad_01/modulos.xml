@@ -3,7 +3,7 @@
     <modulo m="M01">
         <alumno>
             <nombre>Steve Rogers</nombre>
-            <UF1>5.50</UF1>
+            <UF1>5.0</UF1>
             <UF2>3.0</UF2>
             <UF3>7.0</UF3>
         </alumno>
