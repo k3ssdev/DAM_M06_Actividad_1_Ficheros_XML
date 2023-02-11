@@ -1,0 +1,44 @@
+<modulos>
+	<modulo m="M01">
+		<alumno>
+			<nombre>Steve Rogers</nombre>
+			<UF1>5.00</UF1>
+			<UF2>3.00</UF2>
+			<UF3>7.00</UF3>
+		</alumno>
+		<alumno>
+			<nombre>Bruce Banner</nombre>
+			<UF1>9.00</UF1>
+			<UF2>8.50</UF2>
+			<UF3>8.00</UF3>
+		</alumno>
+		<alumno>
+			<nombre>Tony Stark</nombre>
+			<UF1>9.00</UF1>
+			<UF2>9.00</UF2>
+			<UF3>9.00</UF3>
+		</alumno>
+	</modulo>
+	<modulo m="M02">
+		<alumno>
+			<nombre>Bruce Banner</nombre>
+			<UF1>10.00</UF1>
+			<UF2>7.75</UF2>
+			<UF3>6.00</UF3>
+		</alumno>
+	</modulo>
+	<modulo m="M03">
+		<alumno>
+			<nombre>Bruce Banner</nombre>
+			<UF1>8.50</UF1>
+			<UF2>6.50</UF2>
+			<UF3>5.00</UF3>
+		</alumno>
+		<alumno>
+			<nombre>Tony Stark</nombre>
+			<UF1>8.00</UF1>
+			<UF2>10.00</UF2>
+			<UF3>9.00</UF3>
+		</alumno>
+	</modulo>
+</modulos>

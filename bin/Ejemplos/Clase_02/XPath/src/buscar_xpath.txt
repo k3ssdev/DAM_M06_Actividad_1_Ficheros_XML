@@ -1,0 +1,17 @@
+Para buscar información en un documento XML utilizando XPath, debes crear una expresión XPath que seleccione los nodos que deseas encontrar. La expresión XPath se utiliza en una llamada a un método que evalúa la expresión y devuelve los nodos que cumplen con los criterios especificados en la expresión.
+
+Aquí hay algunos ejemplos de cómo utilizar XPath en el documento XML que proporcionaste:
+
+Seleccionar todos los nodos "Libro":
+
+//Libro
+
+Seleccionar el título de todos los libros publicados en 1981:
+
+//Libro[@publicado_en='1981']/Titulo
+
+Seleccionar todos los nodos "Autor" que están dentro de un nodo "Libro" con título "El Nombre de la Rosa":
+
+//Libro[Titulo='El Nombre de la Rosa']/Autor
+
+Estos son solo algunos ejemplos básicos. La sintaxis de XPath es muy flexible y puedes crear expresiones muy complejas para seleccionar los nodos que deseas. Para aprender más sobre cómo utilizar XPath, puedes consultar tutoriales en línea o la documentación de XPath.

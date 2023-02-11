@@ -1,6 +1,16 @@
+package Ejemplos.Clase_02.XPath.src;
+
 public class frmConsultas_XPath extends javax.swing.JFrame {
 
-        
+    //consultaXPath cxPath= new consultaXPath();
+
+    // crear objeto consultaXPath
+    consultaXPath cxPath = new consultaXPath();
+    
+    
+    public frmConsultas_XPath() {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -10,8 +20,7 @@ public class frmConsultas_XPath extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        
-        
+
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtConsulta = new javax.swing.JTextArea();
@@ -95,7 +104,6 @@ public class frmConsultas_XPath extends javax.swing.JFrame {
 
     private void btnEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjecutarActionPerformed
         
-        
         if(cxPath.abrir_file_DOM()!=-1)
         {
             this.txtResultado.setText(cxPath.Ejecutar_XPath(this.txtConsulta.getText()));
@@ -109,7 +117,6 @@ public class frmConsultas_XPath extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /*
-        
          * Set the Nimbus look and feel
          */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

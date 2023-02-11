@@ -1,4 +1,4 @@
-
+package Ejemplos.Clase_02.XPath.src;
 import java.io.FileInputStream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -27,8 +27,7 @@ public class consultaXPath {
             //El fichero XML que se abre es LibrosXML.xml 
             xpath = XPathFactory.newInstance().newXPath() ;
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            XMLDoc = factory.newDocumentBuilder().parse(new InputSource(new
-            FileInputStream("LibrosXML.xml")));
+            XMLDoc = factory.newDocumentBuilder().parse(new InputSource(new FileInputStream("src\\Ejemplos\\Clase_02\\XPath\\src\\LibrosXML.xml")));
             //Al llegar aquí ya se ha creado la estructura DOM para se consultada
             return 0;
         }
