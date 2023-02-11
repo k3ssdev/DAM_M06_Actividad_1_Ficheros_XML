@@ -1,4 +1,4 @@
-package Ejemplos.Clase_02.Cla02_acceso_XPath.src;
+package Ejemplos.Clase_02.DAM_M6_UF1_Cla02_acceso_XPath.src;
 
 public class frmConsultas_XPath extends javax.swing.JFrame {
 

@@ -1,23 +1,5 @@
 package Actividad_01;
 
-/*RESUMEN DEL CÓDIGO:
- * He creado la clase Traspaso, que es la clase principal y contiene dos atributos: un ArrayList de objetos Modulo y un ArrayList de objetos Alumno.
- * Dentro de Traspaso he creado el método main, que llama a un método para leer el contenido del fichero 
- * y otro método para serializar (marshalling) los objetos y guardarlos en un fichero xml.
-
- *El método que lee los datos utiliza un BufferReader para leer el archivo de texto  línea por línea. 
- *Si empieza con "@"es una línea que contiene información sobre el módulo (fecha y nombre del módulo).
- *Si la línea no empieza con "UF", se trata de una línea que contiene el nombre del alumno. 
- *Si la línea empieza con "UF", se trata de una línea que contiene información sobre la nota del alumno. 
- *He usado una estructura while para que lea las líneas hasta que sea null, y para distinguir las líneas en función de como empiecen, 
- *he usado if-else if-else. En el útimo else, he utilizado switch-case para UF1, UF2 y UF3.
-
- *El método que serializa los datos para guardarlos en un xml, crea un objeto de la clase Modulos, que representa al archivo XML. 
- *Luego, recorro los objetos Modulo y Alumno almacenados en los ArrayList modulos y alumnos para agregar cada alumno a su correspondiente módulo. 
- *Finalmente, se utiliza un objeto Marshaller para convertir el objeto Java a un archivo XML y escribirlo en el fichero modulos.xml
- */
-
-
 // Importamos las clases necesarias para trabajar con archivos, creación de XML y manipulación de datos
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,11 +31,7 @@ public class Traspaso {
     System.out.println("Fichero XML creado correctamente.");
   }
 
-  /**
-   * Método que lee el fichero "src/Actividad_01/notas.txt" y almacena los datos
-   * en
-   * los ArrayList modulos y alumnos.
-   */
+  //Método que lee el fichero de texto y almacena los datos en los ArrayList modulos y alumnos.
   public void leerFichero() {
     try {
       // Crea un BufferReader para leer el fichero "src/Actividad_01/notas.txt"
@@ -73,7 +51,7 @@ public class Traspaso {
           // Separa la línea en fecha y módulo
           String[] fechaModulo = linea.substring(1).split(" ");
 
-          // Crea un nuevo objeto Modulo y establece su m
+          // Crea un nuevo objeto Modulo y establece su curso
           m = new Modulo();
           m.setM(fechaModulo[1]);
 
@@ -87,8 +65,8 @@ public class Traspaso {
           a.setNombre(linea);
 
           // Si m no es null, añade el objeto Alumno a la lista de alumnos del objeto
-          // Modulo
           if (m != null) {
+            // Añade el objeto Alumno al ArrayList alumnos
             m.getAlumno().add(a);
           }
         }
@@ -102,6 +80,7 @@ public class Traspaso {
             // Según la nota, establece el valor correspondiente en el objeto Alumno
             switch (nota[0]) {
               case "UF1":
+              // Convierte el valor de la nota a float y lo establece en el objeto Alumno
                 a.setUF1(Float.parseFloat(nota[1]));
                 break;
               case "UF2":
@@ -125,6 +104,7 @@ public class Traspaso {
     }
   }
 
+  // Método que crea el archivo XML a partir de los ArrayList modulos y alumnos
   public void crearXML() {
     try {
       // Crea un objeto de la clase Modulos
