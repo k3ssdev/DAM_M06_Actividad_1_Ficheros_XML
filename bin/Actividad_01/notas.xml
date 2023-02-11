@@ -1,4 +1,6 @@
-<modulos>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modulos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notas.xsd">
 	<modulo m="M01">
 		<alumno>
 			<nombre>Steve Rogers</nombre>
