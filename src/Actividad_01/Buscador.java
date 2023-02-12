@@ -101,12 +101,16 @@ public class Buscador {
     // Método para ejecutar una consulta XPath
     public NodeList Ejecutar_XPath(String txtconsulta) {
         try {
+            String salida="";
             // Crear objeto XPathExpression y ejecutar la consulta
             exp = xpath.compile(txtconsulta);
             // Obtener el resultado de la consulta
             Object result = exp.evaluate(XMLDoc, XPathConstants.NODESET);
             // Devolver el resultado
             NodeList nodeList = (NodeList) result;
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                salida= salida + "\n" + nodeList.item(i).getChildNodes().item(0).getNodeValue();
+            }
             return nodeList;
         } catch (Exception ex) {
             System.out.println("Error: " + ex.toString());
