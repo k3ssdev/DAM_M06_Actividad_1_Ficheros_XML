@@ -41,7 +41,7 @@ public class Buscador {
 
             // Borrar pantalla y mostrar datos en formato tabla
             System.out.print("\033[H\033[2J");           
-            System.out.println("Bsusqueda: " + busqueda);
+            System.out.println("Busqueda: " + busqueda);
             System.out.println("");
             System.out.println(" ___________________________________________");
             System.out.println("|      Nombre          |  UF1 |  UF2 |  UF3 |");

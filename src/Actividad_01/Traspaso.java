@@ -19,7 +19,7 @@ import Actividad_01.generated.Modulos.Modulo.Alumno;
 // Clase Traspaso para realizar la lectura de un archivo y la creación de un archivo XML
 public class Traspaso {
 
-  // Atributos que almacenarán los objetos Modulo y Alumno
+  // ArrayList para almacenar los objetos Modulo y Alumno
   private ArrayList<Modulo> modulos = new ArrayList<Modulo>();
   private ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
 

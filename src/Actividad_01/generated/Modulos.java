@@ -5,9 +5,7 @@
 // Generado el: 2023.02.11 a las 12:18:41 PM CET 
 //
 
-
 package Actividad_01.generated;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,54 +18,9 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 
-
-/**
- * <p>Clase Java para anonymous complex type.
- * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="modulo" maxOccurs="unbounded">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="alumno" maxOccurs="unbounded">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;element name="UF1" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="UF2" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                             &lt;element name="UF3" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *                 &lt;attribute name="m" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                 &lt;attribute name="fecha" type="{http://www.w3.org/2001/XMLSchema}date" />
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "modulo","linea"
+        "modulo", "linea"
 })
 @XmlRootElement(name = "modulos")
 public class Modulos {
@@ -87,8 +40,9 @@ public class Modulos {
      * 
      * <p>
      * For example, to add a new item, do as follows:
+     * 
      * <pre>
-     *    getModulo().add(newItem);
+     * getModulo().add(newItem);
      * </pre>
      * 
      * 
@@ -107,17 +61,19 @@ public class Modulos {
 
     public String getLinea() {
         return linea;
-      }
-    
-      public void setLinea(String value) {
+    }
+
+    public void setLinea(String value) {
         this.linea = value;
-      }
-    
+    }
 
     /**
-     * <p>Clase Java para anonymous complex type.
+     * <p>
+     * Clase Java para anonymous complex type.
      * 
-     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * <p>
+     * El siguiente fragmento de esquema especifica el contenido que se espera que
+     * haya en esta clase.
      * 
      * <pre>
      * &lt;complexType>
@@ -150,7 +106,7 @@ public class Modulos {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "alumno"
+            "alumno"
     })
     public static class Modulo {
 
@@ -161,7 +117,7 @@ public class Modulos {
         @XmlAttribute(name = "fecha")
         @XmlSchemaType(name = "date")
         protected XMLGregorianCalendar fecha;
-        //public String linea;
+        // public String linea;
 
         /**
          * Gets the value of the alumno property.
@@ -174,8 +130,9 @@ public class Modulos {
          * 
          * <p>
          * For example, to add a new item, do as follows:
+         * 
          * <pre>
-         *    getAlumno().add(newItem);
+         * getAlumno().add(newItem);
          * </pre>
          * 
          * 
@@ -196,9 +153,9 @@ public class Modulos {
          * Obtiene el valor de la propiedad m.
          * 
          * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *         possible object is
+         *         {@link String }
+         * 
          */
         public String getM() {
             return m;
@@ -208,9 +165,9 @@ public class Modulos {
          * Define el valor de la propiedad m.
          * 
          * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *              allowed object is
+         *              {@link String }
+         * 
          */
         public void setM(String value) {
             this.m = value;
@@ -220,9 +177,9 @@ public class Modulos {
          * Obtiene el valor de la propiedad fecha.
          * 
          * @return
-         *     possible object is
-         *     {@link XMLGregorianCalendar }
-         *     
+         *         possible object is
+         *         {@link XMLGregorianCalendar }
+         * 
          */
         public XMLGregorianCalendar getFecha() {
             return fecha;
@@ -232,19 +189,21 @@ public class Modulos {
          * Define el valor de la propiedad fecha.
          * 
          * @param value
-         *     allowed object is
-         *     {@link XMLGregorianCalendar }
-         *     
+         *              allowed object is
+         *              {@link XMLGregorianCalendar }
+         * 
          */
         public void setFecha(XMLGregorianCalendar value) {
             this.fecha = value;
         }
 
-
         /**
-         * <p>Clase Java para anonymous complex type.
+         * <p>
+         * Clase Java para anonymous complex type.
          * 
-         * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+         * <p>
+         * El siguiente fragmento de esquema especifica el contenido que se espera que
+         * haya en esta clase.
          * 
          * <pre>
          * &lt;complexType>
@@ -265,10 +224,10 @@ public class Modulos {
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "nombre",
-            "uf1",
-            "uf2",
-            "uf3"
+                "nombre",
+                "uf1",
+                "uf2",
+                "uf3"
         })
         public static class Alumno {
 
@@ -285,9 +244,9 @@ public class Modulos {
              * Obtiene el valor de la propiedad nombre.
              * 
              * @return
-             *     possible object is
-             *     {@link String }
-             *     
+             *         possible object is
+             *         {@link String }
+             * 
              */
             public String getNombre() {
                 return nombre;
@@ -297,9 +256,9 @@ public class Modulos {
              * Define el valor de la propiedad nombre.
              * 
              * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
+             *              allowed object is
+             *              {@link String }
+             * 
              */
             public void setNombre(String value) {
                 this.nombre = value;
@@ -309,9 +268,9 @@ public class Modulos {
              * Obtiene el valor de la propiedad uf1.
              * 
              * @return
-             *     possible object is
-             *     {@link float }
-             *     
+             *         possible object is
+             *         {@link float }
+             * 
              */
             public Float getUF1() {
                 return uf1;
@@ -321,9 +280,9 @@ public class Modulos {
              * Define el valor de la propiedad uf1.
              * 
              * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
+             *          allowed object is
+             *          {@link Float }
+             * 
              */
             public void setUF1(float f) {
                 this.uf1 = f;
@@ -333,9 +292,9 @@ public class Modulos {
              * Obtiene el valor de la propiedad uf2.
              * 
              * @return
-             *     possible object is
-             *     {@link Float }
-             *     
+             *         possible object is
+             *         {@link Float }
+             * 
              */
             public Float getUF2() {
                 return uf2;
@@ -345,9 +304,9 @@ public class Modulos {
              * Define el valor de la propiedad uf2.
              * 
              * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
+             *          allowed object is
+             *          {@link Float }
+             * 
              */
             public void setUF2(float f) {
                 this.uf2 = f;
@@ -357,9 +316,9 @@ public class Modulos {
              * Obtiene el valor de la propiedad uf3.
              * 
              * @return
-             *     possible object is
-             *     {@link Float }
-             *     
+             *         possible object is
+             *         {@link Float }
+             * 
              */
             public Float getUF3() {
                 return uf3;
@@ -369,16 +328,15 @@ public class Modulos {
              * Define el valor de la propiedad uf3.
              * 
              * @param f
-             *     allowed object is
-             *     {@link Float }
-             *     
+             *          allowed object is
+             *          {@link Float }
+             * 
              */
             public void setUF3(float f) {
                 this.uf3 = f;
             }
 
         }
-
 
         public void setFecha(String string) {
         }
