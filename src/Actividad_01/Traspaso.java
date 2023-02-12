@@ -55,7 +55,7 @@ public class Traspaso {
           m = new Modulo();
           m.setM(fechaModulo[1]);
 
-          // Añade el objeto Modulo al ArrayList modulos
+          // Añade el objeto Modulo al ArrayList modulos, usando this para hacer referencia al objeto actual de la clase 
           this.modulos.add(m);
         }
         // Si la línea no empieza con "UF"

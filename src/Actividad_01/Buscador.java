@@ -1,5 +1,6 @@
 package Actividad_01;
 
+// Importamos las clases necesarias para trabajar con archivos, creación de XML y manipulación de datos
 import java.io.FileInputStream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -9,6 +10,8 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
@@ -31,26 +34,40 @@ public class Buscador {
         NodeList result = buscador.Ejecutar_XPath(busqueda); 
         // Mostrar resultado, si lo hay
         if (result != null) {
-            // Obtener datos del alumno
-            String nombre = result.item(0).getChildNodes().item(1).getTextContent();
-            // Obtener datos de las UF con 2 decimales
-            String UF1 = String.format("%.2f", Float.parseFloat(result.item(0).getChildNodes().item(3).getTextContent()));
-            String UF2 = String.format("%.2f", Float.parseFloat(result.item(0).getChildNodes().item(5).getTextContent()));
-            String UF3 = String.format("%.2f", Float.parseFloat(result.item(0).getChildNodes().item(7).getTextContent()));
-
-
-            // Borrar pantalla y mostrar datos en formato tabla
             System.out.print("\033[H\033[2J");           
             System.out.println("Busqueda: " + busqueda);
             System.out.println("");
-            System.out.println(" ___________________________________________");
-            System.out.println("|      Nombre          |  UF1 |  UF2 |  UF3 |");
-            System.out.println("|----------------------|------|------|------|");
-            System.out.printf("| %-20s | %-2s | %-2s | %-2s |%n", nombre, UF1, UF2, UF3);
-            System.out.println("|______________________|______|______|______|");
+            System.out.println(" __________________________________________________________");
+            System.out.println("|      Nombre          |  Modulo   |  UF1  |  UF2  |  UF3  |");
+            System.out.println("|----------------------|-----------|-------|-------|-------|");
+            
+            // Recorrer el NodeList y mostrar los resultados
+            for (int i = 0; i < result.getLength(); i++) {
+                // Obtener el nodo actual
+                Node node = result.item(i);
+                // Si el nodo es un elemento (no un texto)
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    // Obtener el elemento
+                    Element element = (Element) node;
+                    
+                    // Obtener los datos del elemento y mostrarlos
+                    String nombre = element.getElementsByTagName("nombre").item(0).getTextContent();
+
+                    // Obtener el valor del atributo m del elemento padre
+                    String m = element.getParentNode().getAttributes().getNamedItem("m").getNodeValue();
+
+                    // Formatear las notas a 2 decimales
+                    String UF1 = String.format("%.2f", Float.parseFloat(element.getElementsByTagName("UF1").item(0).getTextContent()));
+                    String UF2 = String.format("%.2f", Float.parseFloat(element.getElementsByTagName("UF2").item(0).getTextContent()));
+                    String UF3 = String.format("%.2f", Float.parseFloat(element.getElementsByTagName("UF3").item(0).getTextContent()));
+                    // Mostrar los datos
+                    System.out.printf("| %-20s | %-9s | %-5s | %-5s | %-5s |%n", nombre, m, UF1, UF2, UF3);
+                }
+            }
+            System.out.println("|______________________|___________|_______|_______|_______|");
             System.out.println("");
             System.out.println("Pulse una tecla para continuar...");
-            
+        
             // Esperar a que se pulse una tecla
             try {
                 System.in.read();
