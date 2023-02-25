@@ -28,7 +28,7 @@ public class Buscador {
         Buscador buscador = new Buscador();
         // Abrir fichero XML y crear DOM
         buscador.abrir_file_DOM();
-        String busqueda = "/modulos/modulo/alumno[nombre='Bruce Banner']";
+        String busqueda = "/modulos/modulo/alumno[nombre='Steve Rogers']";
         // Ejecutar consulta XPath
         NodeList result = buscador.Ejecutar_XPath(busqueda);
 
