@@ -1,6 +1,6 @@
-## [DAM - M06] Repositorio Actividades de la asignatura de "Acceso a datos"
+## [DAM][M06] Actividad 1 - Persistencia y manipulación ficheros XML
 
-Este repositorio lo he creado para poder subir las actividades de la asignatura de "Acceso a Datos". Aquí se irán subiendo las actividades que se vayan realizando a lo largo del semestre. 
+Este repositorio lo he creado para poder subir las actividades de la asignatura de "Acceso a Datos". Esta primera actividad está orientada a trabajar con persistencia de ficheros y manipulación de archivos XML de forma básica.
 
 ## Estructura del repositorio
 
